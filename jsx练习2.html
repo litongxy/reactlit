@@ -7,21 +7,20 @@
     <script src="./js/react.development.js"></script>
     <script src="./js/react-dom.development.js"></script>
     <script src="./js/babel.min.js"></script>
-
     <title>Document</title>
-    <style>
-      .styled {
-        background-color: aqua;
-      }
-    </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="text/babel">
-      let VDOM = (
-        <h1 className="styled" style={{ color: 'white' }}>
-          hello,react
-        </h1>
+      const data = ['记得要忘记', '结局仪式开始', 'react']
+      const VDOM = (
+        <div>
+          <ul>
+            {data.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
       )
       ReactDOM.render(VDOM, document.getElementById('root'))
     </script>
